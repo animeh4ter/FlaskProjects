@@ -40,6 +40,17 @@ width:512px;
 height:255px;
 }
 
+.h404{
+font-size: 46px;
+margin: 20px 0px 10px;
+text-align: center;
+}
+
+.img404{
+text-align: center;
+margin:-75px ;
+}
+
 p{
 margin: 20px; 
 }
