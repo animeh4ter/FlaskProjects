@@ -2,15 +2,21 @@ body{
 background: lightyellow;
 margin: 0;
 padding: 0;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .menu{
 display: flex;
 justify-content: space-around;
 list-style: none;
-background: rgb(255, 160, 122);
+background: rgb(126, 208, 247);
 padding: 20px;
 margin-top: 0;
+border-bottom: 1px solid grey;
+}
+
+.menuhref{
+color: black; 
 }
 
 .content{
@@ -25,7 +31,7 @@ text-align: center;
 }
 
 .cat{
-border: 4px solid black;
+border: 3px solid grey;
 width: 500px; 
 height: 500px;
 }
@@ -35,9 +41,22 @@ text-align: center;
 }
 
 .gitIMG{
-border: 4px solid black;
-width:512px;
-height:255px;
+--s: 400px;
+--b: 8px;
+--g: 14px;
+--c: rgb(126, 208, 247);
+
+width: var(--s);
+aspect-ratio: 1;
+outline: calc(var(--s)/2);
+outline-offset: calc(var(--s)/-2);
+cursor: pointer;
+transition: 0.7s;
+}
+
+.gitIMG:hover{
+outline: var(--b) solid var(--c);
+outline-offset: var(--g);
 }
 
 .h404{
@@ -59,4 +78,76 @@ h1{
 font-size: 46px;
 margin: 20px 0px 100px;
 text-align: center;
+}
+
+h2{
+font-size: 32px;
+margin: 100px 0px 20px;
+text-align: center ;
+}
+
+hr{
+margin: 10px 100px;
+}
+
+.mainul{
+list-style-type: none;
+display: flex;
+justify-content: space-between;
+padding: 20px;
+}
+
+li>p, li div{
+border: 1px solid gray;
+padding: 10px 20px;
+}
+
+.mainli{
+margin: 25px;
+}
+
+p.title{
+margin: 0;
+text-align: center;
+font-weight: bold;
+background: rgb(150, 230, 250);
+}
+
+p.title a{
+display: block;
+}
+
+p.title:hover{
+background: rgb(108, 241, 212);
+}
+
+.preview{
+margin-top: -1px;
+margin-bottom: 40px;
+background: white;
+}
+
+.button{
+    background-color: rgb(126, 208, 247);
+    border: 1px solid grey;
+    color: black;
+    text-decoration: underline;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+background-color: grey;
+transition: 0.2s;
+}
+
+.loremtitle{
+    margin-bottom: 20px;
+}
+
+.loremp{
+    margin-bottom: 100px;
 }

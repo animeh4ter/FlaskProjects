@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, g
+from flask import Flask, url_for, render_template, g, abort
 from DBManipulator import DBM
 import sqlite3
 import os
@@ -41,7 +41,16 @@ def dbm_thrower():
 @app.route('/')
 @app.route('/main')
 def main_page():
-    return render_template("mainpage.html", title='Main', site_menu=dbm_thrower().get_menu())
+    return render_template("mainpage.html", title='Main', lorems=dbm_thrower().get_all_lorems(),
+                           site_menu=dbm_thrower().get_menu())
+
+
+@app.route('/lorem/<int:id_lorem>')
+def show_lorem(id_lorem):
+    title, lorem = dbm_thrower().get_one_lorem(id_lorem)
+    if not title:
+        abort(404)
+    return render_template("chosenlorem.html", title=title, lorem=lorem, site_menu=dbm_thrower().get_menu())
 
 
 @app.route('/about')

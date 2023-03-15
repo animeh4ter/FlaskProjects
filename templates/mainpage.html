@@ -2,5 +2,16 @@
 {% block content %}
 {{super()}}
 <h1>Main page</h1>
-
+<h2>Lorem Ipsum previews here</h2>
+<hr>
+<ul class="mainul">
+    {% for lorem in lorems %}
+    <li class="mainli">
+        <p class="title">
+            <a href="{{url_for('show_lorem', id_lorem=lorem.id)}}">{{lorem.title}}</a>
+        </p>
+        <div class="preview">{{lorem.text[:120]+' ...'}}</div>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock content%}
